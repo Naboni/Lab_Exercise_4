@@ -30,6 +30,40 @@ function deposit(){
     }
 }
 
+function withdraw(){
+    let acName = prompt("Enter ur name: ");
+    let acNum = parseInt(prompt("Enter ur account number: "));
+    
+    if (acName==person1.name && acNum==person1.acNo){
+        alert("Hello "+person1.name);
+        let mon = parseFloat(prompt("Enter how much u want to withdraw: ")) 
+        let newmon = person1.balance-=mon;
+        alert("You have now "+ newmon);
+    } else if (acName==person2.name && acNum==person2.acNo){
+        alert("Hello "+person2.name);
+        let mon = parseFloat(prompt("Enter how much u want to withdraw: ")) 
+        let newmon = person2.balance-=mon;
+        alert("You have now "+ newmon);
+    }else{
+        alert("Error")
+    }
+}
+
+function balance(){
+    let acName = prompt("Enter ur name: ");
+    let acNum = parseInt(prompt("Enter ur account number: "));
+    
+    if (acName==person1.name && acNum==person1.acNo){
+        alert("Hello "+person1.name);
+        alert("You have now "+ person1.balance);
+    } else if (acName==person2.name && acNum==person2.acNo){
+        alert("Hello "+person1.name);
+        alert("You have now "+ person1.balance);
+    }else{
+        alert("Error")
+    }
+}
+
 // while(true){
 //     (function(){
 //         var choice = parseInt(prompt("1 for deposit.\n 2 for withdraw. \n 3 for balance. \n 4 for transfer."))
@@ -49,6 +83,5 @@ function deposit(){
 // }
 
 
-
-deposit();
+balance();
 
