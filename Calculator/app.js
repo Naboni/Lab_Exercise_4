@@ -34,17 +34,41 @@ function div(a, b) {
 	}
 	return a / b;
 }
-(function () {
-	const op = prompt('Choose your operation ( +, -, * or / ): ');
+function findMax(a = []){
+	maxValue = a[0];
+	for (let i of a){
+		if (i> maxValue){
+			maxValue = i;
+		}
+	}
+	return maxValue;
+}
+function findMin(a = []){
+	minValue = a[0];
+	for (let i of a){
+		if (i< minValue){
+			minValue = i;
+		}
+	}
+	return minValue;
+}
 
-	if (op == '+') {
+function sqr(a){
+	return a * a;
+}
+
+
+(function () {
+	const op = prompt('Choose your operation ( 1 for Addition \n 2 for Substraction \n 3 for Multiplication\n 4 for Division \n 5 for average \n 6 for max \n 7 for min \n 8 for square): ');
+
+	if (op == '1') {
 		let arr = new Array();
 		numberOfelems = prompt('how many nums? ');
 		for (let i = 0; i < parseInt(numberOfelems); i++) {
 			arr[i] = parseFloat(prompt('enter number ' + (i + 1)));
 		}
 		alert((add(arr)));
-	} else if (op == '-') {
+	} else if (op == '2') {
 		let arr = new Array();
 		numberOfelems = prompt('how many nums? ');
 		for (let i = 0; i < parseInt(numberOfelems); i++) {
@@ -52,17 +76,47 @@ function div(a, b) {
 		}
 		alert((subtraction(arr)));
 		
-	} else if (op == '*') {
+	} else if (op == '3') {
 		let arr = new Array();
 		numberOfelems = prompt('how many nums? ');
 		for (let i = 0; i < parseInt(numberOfelems); i++) {
 			arr[i] = parseFloat(prompt('enter number ' + (i + 1)));
 		}
 		alert((mult(arr)));
-	} else {
+	} else if (op == '4'){
 		const number1 = parseFloat(prompt('Enter first number: '));
 		const number2 = parseFloat(prompt('Enter second number: '));
-
 		alert((div(number1, number2)));
+
+	}else if (op == '5'){
+		let arr = new Array();
+		numberOfelems = prompt('how many nums? ');
+		for (let i = 0; i < parseInt(numberOfelems); i++) {
+			arr[i] = parseFloat(prompt('enter number ' + (i + 1)));
+		}
+		alert(add(arr)/arr.length);
 	}
+	else if (op == '6'){
+		let arr = new Array();
+		numberOfelems = prompt('how many nums? ');
+		for (let i = 0; i < parseInt(numberOfelems); i++) {
+			arr[i] = parseFloat(prompt('enter number ' + (i + 1)));
+		}
+		alert(findMax(arr));
+	}
+	else if (op == '7'){
+		let arr = new Array();
+		numberOfelems = prompt('how many nums? ');
+		for (let i = 0; i < parseInt(numberOfelems); i++) {
+			arr[i] = parseFloat(prompt('enter number ' + (i + 1)));
+		}
+		alert(findMin(arr));
+	}else if (op == '8'){
+		num = prompt("number: ");
+		alert(sqr(num));
+	}else{
+		alert("Wrong insertion")
+	}
+
 })();
+
